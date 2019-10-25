@@ -15,13 +15,6 @@ public class ConwaysLife implements ILifeRules {
 
 	@Override
 	public String[][] applyRules(String[][] data, int generation) {
-
-		for (int i = 0; i < data.length; i++) {
-			for (int j = 0; j < data[i].length; j++) {
-				System.out.printf("  " + data[i][j]);
-			}
-			System.out.println();
-		}
 		// TODO Auto-generated method stub
 
 		String[][] returnData = new String[data.length][data[0].length];
@@ -73,21 +66,21 @@ public class ConwaysLife implements ILifeRules {
 				// Cell Status
 				if (data[i][j].equals("+"))
 					cellStatus = 1;
-				else if (data[i][j].equals(""))
-					cellStatus = 0;
 				else if (data[i][j].equals("X"))
+					cellStatus = 0;
+				else if (data[i][j].equals(""))
 					cellStatus = 2;
 
 				if (deathRule()) {
 					returnData[i][j] = "";
 				} else if (survivalRule()) {
-					returnData[i][j] = "X";
+					returnData[i][j] = "X";// data[i][j];
 				} else if (birthRule()) {
 					returnData[i][j] = "+";
 				} else {
 					returnData[i][j] = "";
 				}
-				cellStatus = 0;
+				cellStatus = 5;
 				neighborCount = 0;
 			}
 		}
@@ -139,7 +132,7 @@ public class ConwaysLife implements ILifeRules {
 	@Override
 	public boolean birthRule() {
 		// TODO Auto-generated method stub
-		if (neighborCount == 3 && cellStatus == 0)
+		if (neighborCount == 3 && cellStatus == 2)//
 			return true;
 		else
 			return false;

@@ -8,9 +8,24 @@ public class Output {
 	private int noOfGenerations;
 	private String gameChoice;
 
-	public void printOutput() {
+	public void printOutput(String[][] initialGenerationData) {
 		System.out.println("\n\n");
-		System.out.println("The OUTPUT:");
+		System.out.println("The INITIAL GENERATION:");
+		System.out.println("---------------------");
+		System.out.print(" ");
+
+		for (int i = 0; i < initialGenerationData[0].length; i++) {
+			System.out.print("  |");
+		}
+		System.out.println();
+		for (int i = 0; i < initialGenerationData.length; i++) {
+			System.out.print("-- ");
+			for (int j = 0; j < initialGenerationData[i].length; j++) {
+				System.out.print(initialGenerationData[i][j] + "   ");
+			}
+			System.out.println();
+		}
+		System.out.println("---------------------");
 		System.out.println("\n");
 	}
 
@@ -25,13 +40,7 @@ public class Output {
 		System.out.println("Generation no: " + noOfGenerations);
 		System.out.println("---------------------");
 		System.out.print(" ");
-		/*
-		 * for (int i = 0; i < populatedCellsData[0].length; i++) {
-		 * System.out.print("  |"); } System.out.println(); for (int i = 0; i <
-		 * populatedCellsData.length; i++) { System.out.print("-- "); for (int j = 0; j
-		 * < populatedCellsData[i].length; j++) {
-		 * System.out.print(populatedCellsData[i][j] + "   "); } System.out.println(); }
-		 */
+
 		for (int i = 0; i < data[0].length; i++) {
 			System.out.print("  |");
 		}

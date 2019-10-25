@@ -53,13 +53,13 @@ public class VariationLife implements ILifeRules {
 				if (deathRule()) {
 					returnData[i][j] = "";
 				} else if (survivalRule()) {
-					returnData[i][j] = data[i][j];
+					returnData[i][j] = "X";
 				} else if (birthRule()) {
 					returnData[i][j] = "+";
 				} else {
 					returnData[i][j] = "";
 				}
-				cellStatus = 0;
+				cellStatus = 5;
 				neighborCount = 0;
 			}
 		}
