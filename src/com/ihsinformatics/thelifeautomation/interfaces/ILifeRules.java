@@ -1,12 +1,16 @@
 package com.ihsinformatics.thelifeautomation.interfaces;
 
+/*
+ * @author qasim.ali@ihsinformatics.com
+ * */
+
 public interface ILifeRules {
 
-	boolean deathRule();
+	boolean deathRule(int neighborCount, int cellStatus, int generationSurvived);
 
-	boolean survivalRule();
+	boolean survivalRule(int neighborCount, int cellStatus, int generationSurvived);
 
-	boolean birthRule();
+	boolean birthRule(int neighborCount, int cellStatus, int generationSurvived);
 
-	public String[][] applyRules(String[][] data, int generation);
+	public String[][] step(String[][] data, int generation, int counter);
 }

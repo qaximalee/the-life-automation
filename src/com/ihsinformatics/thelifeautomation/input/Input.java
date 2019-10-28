@@ -7,6 +7,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+/*
+ * @author qasim.ali@ihsinformatics.com
+ * */
+
 public class Input {
 
 	private String gameChoice;

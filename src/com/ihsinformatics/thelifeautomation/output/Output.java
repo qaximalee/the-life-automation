@@ -1,6 +1,8 @@
 package com.ihsinformatics.thelifeautomation.output;
 
-import java.util.Arrays;
+/*
+ * @author qasim.ali@ihsinformatics.com
+ * */
 
 public class Output {
 
@@ -36,8 +38,8 @@ public class Output {
 	 * 
 	 * @param noOfGen it is the no of generation for which the data has modified
 	 */
-	public void printGeneration(String[][] data) {
-		System.out.println("Generation no: " + noOfGenerations);
+	public void printGeneration(String[][] data, int counter) {
+		System.out.println("Generation no: " + counter);
 		System.out.println("---------------------");
 		System.out.print(" ");
 
@@ -46,9 +48,13 @@ public class Output {
 		}
 		System.out.println();
 		for (int i = 0; i < data.length; i++) {
-			System.out.print("-- ");
+			System.out.print(i + ">> ");
 			for (int j = 0; j < data[i].length; j++) {
-				System.out.print(data[i][j] + "   ");
+				if (data[i][j].equals("null"))
+					System.out.print(data[i][j] + "  ");
+				else
+					System.out.print(data[i][j] + "     ");
+				// System.out.print(data[i][j] + " ");
 			}
 			System.out.println();
 		}
@@ -77,11 +83,5 @@ public class Output {
 
 	public void setGameChoice(String gameChoice) {
 		this.gameChoice = gameChoice;
-	}
-
-	@Override
-	public String toString() {
-		return "Output [populatedCellsData=" + Arrays.toString(populatedCellsData) + ", noOfGenerations="
-				+ noOfGenerations + ", gameChoice=" + gameChoice + "]";
 	}
 }
