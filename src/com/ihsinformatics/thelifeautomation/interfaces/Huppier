@@ -1,0 +1,4 @@
+public interface Huppier{
+  void helper(String args);
+  String getHelper(String args);
+}
